@@ -50,7 +50,8 @@ const News =(props)=>{
   //   setPage(page+1)
   //   updateNews();
   // };
-
+      
+  
     return (
       <>
           <h1 className="text-center" style={{ margin: "35px 0px",marginTop:'90px' }}>
