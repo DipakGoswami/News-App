@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 const News =(props)=>{
   const [articles, setArticles] = useState([])
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true)
   const [totalResults, setTotalResults] = useState(0)
   const [page,setPage]=useState(1)
@@ -21,8 +22,12 @@ const News =(props)=>{
     props.setProgress(30)
     let parsedData = await data.json();
     props.setProgress(70)
+
     setArticles(parsedData.articles)
     setTotalResults(parsedData.totalResults)
+   
+
+    
     setLoading(false)
     props.setProgress(100)
   }
@@ -36,6 +41,8 @@ const News =(props)=>{
     setPage(page+1)
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${process.env.REACT_APP_NEWS_API}&page=${page+1}&pageSize=${props.pageSize}`;
     let data = await fetch(url);
+   
+    
     let parsedData = await data.json();
     setArticles(articles.concat(parsedData.articles))
     setTotalResults(parsedData.totalResults)
@@ -51,6 +58,7 @@ const News =(props)=>{
   //   updateNews();
   // };
       
+ 
   
     return (
       <>

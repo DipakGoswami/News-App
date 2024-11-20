@@ -34,7 +34,7 @@ const App = ()=>{
   const apiKey = process.env.REACT_APP_NEWS_API
   const [progress, setProgress] = useState(0)
   
-  const country ='in'
+  const country ='us'
     return (
       <div>
         <Router>
